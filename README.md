@@ -1,1 +1,1 @@
-![My Entity Relationship Diagram](/assets/images/ERD.png "ERD")
+![My Entity Relationship Diagram](/public/images/ERD.png "ERD")
