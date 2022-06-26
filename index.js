@@ -29,5 +29,5 @@ app.use(function(req, res, next) {
 app.use('/user', userRoutes);
 app.use('/post', postRoutes);
 
-const PORT = process.env.PORT || 3000; // server runs heroku port, otherwise on localhost port 3000
+const PORT = process.env.PORT || 5000; // server runs heroku port, otherwise on localhost port 3000
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!`)); // if we can successfully listen to our port, output to console

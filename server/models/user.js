@@ -1,6 +1,6 @@
-// import mongoose
+// imports
 const mongoose = require("mongoose");
-
+const bcrypt = require('bcryptjs');
 
 // Schema
 const userSchema = new mongoose.Schema({
@@ -20,24 +20,30 @@ const User = mongoose.model("User", userSchema);
 async function register(username, password) {
     const user = await getUser(username);
     if (user) throw Error('Username already used');
+
+    const hashed = hashPassword(password);
+    
     const newUser = await User.create({
         username: username,
-        password: password
+        password: hashed
     })
-    return newUser;
+    return newUser._doc;
 }
 
 // READ a user
 async function login(username, password) {
     const user = await getUser(username);
     if (!user) throw Error('User not found');
-    if (user.password != password) throw Error('Incorrect password');
-    return user;
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    if(!isMatch) throw Error('Incorrect password');
+    return user._doc;
 }
 
 // UPDATE user info
 async function updatePassword(id, password) {
-    const user = await User.updateOne({"_id": id}, {$set: { password: password }});
+    const hashed = hashPassword(password);
+    const user = await User.updateOne({"_id": id}, {$set: { password: hashed }});
     return user;
 }
 
@@ -49,6 +55,12 @@ async function deleteUser(id) {
 // utility functions
 async function getUser(username) { 
     return await User.findOne({ "username" : username});
+}
+
+async function hashPassword(password) {
+    const salt = await bcrypt.genSalt(10);
+    const hashed = await bcrypt.hash(password,salt);
+    return hashed;
 }
 
 // export all functions necessary for route file

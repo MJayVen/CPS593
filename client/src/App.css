@@ -1,0 +1,134 @@
+:root {
+  --red: #ff7171;
+  --dark-red: #fb2222;
+  --darker-red: #a01818;
+  --light-red: #fbcdcd;
+  --off-white: #f6f6f6;
+  --navy-blue: #191d51;
+  --light-blue: #e3e4fd;
+}
+
+body {
+  padding: 0 10px;
+  font-family:Cambria;
+  background-color: var(--off-white);
+}
+
+/* main page structure */
+.container {
+  border-color: var(--red) !important; 
+  border-width: 1px !important;
+  min-width: 420px;
+  max-width: 1320px;
+  padding:0px;
+  height: 100em;
+  background-color: white;
+} 
+
+/* navbar */
+.navbar{
+  border-color: var(--red) !important;
+  border-width: 1px !important;
+  padding: 10px;
+  position:relative;
+}
+#navbarNav .nav-item {
+  padding: 0 5px;
+}
+#navbarDropdownMenuLink {
+  margin-right:auto;
+}
+.userMenu .a {
+  display:flex;
+  align-items: center;
+  position: absolute;
+}
+.userDropdown.nav-link{
+  display:inline
+}
+.dropdown-menu {
+  position: relative;
+  top: 100%; /* Bottom of button */
+}
+.username.nav-link {
+  margin-right:auto;
+}
+
+
+
+
+/* button behavior */
+.btn{
+  box-shadow: none;
+}
+.btn:focus {
+  box-shadow: 0 0 0 0.2rem var(--red) !important;
+}
+  /* red button */
+.btn-primary {
+  background-color: var(--dark-red) !important;
+  font-weight: bold;
+  border:none;
+}
+  /* white button */
+.btn-secondary {
+  background-color: var(--off-white) !important;
+  color:var(--red) !important; 
+  border: 1px solid var(--red) !important;
+  font-weight: bold;
+}
+  /* outline button */
+/* .btn-outline-primary {
+  color: var(--red);
+  border-color:var(--red);
+} */
+
+
+
+/* new post button */
+#newPost {
+  border: 1px solid var(--navy-blue);
+  background-color: var(--light-blue);
+  font-weight: bold;
+  border-radius: 50px;
+  height:min-content;
+  max-width: 169px;
+  min-width: 169px;
+  margin: 0 10px;
+}
+
+/* log in/sign in buttons */
+#signInBtns {
+  display: flex;
+}
+
+
+/* text input boxes */
+.form-control {
+  border-color: var(--red) !important;
+}
+.form-control:focus{
+  box-shadow: 0 0 0 0.2rem var(--red);
+}
+
+/* search bar */
+.d-flex .form-control { 
+  border-radius: 6px 0 0 6px;
+}
+/* search button */
+.d-flex .btn { 
+  border-radius: 0 6px 6px 0;
+  border-left: 0;
+}
+
+
+/* Login/Register Page */
+.signInContainer .container-sm {
+  max-width: 540px;
+  margin-top: 100px;
+}
+.signInContainer .container-sm h1{
+  text-align: center;
+  color: var(--darker-red);
+  font-weight: bold;
+}
