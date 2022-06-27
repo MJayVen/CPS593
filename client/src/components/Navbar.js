@@ -11,10 +11,10 @@ function Navbar(props) {
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                        <a href="#" class="btn btn-primary btn-lg shadow md-body rounded" role="button" aria-pressed="true">Log In</a>
+                        <a href="#" id="loginBtn" class="btn btn-primary btn-lg shadow md-body rounded" role="button" aria-pressed="true">Log In</a>
                     </li>
                     <li className="nav-item">
-                    <a href="#" class="btn btn-secondary btn-lg shadow md-body rounded" role="button" aria-pressed="true">Register</a>
+                        <a href="#" id="registerBtn" class="btn btn-secondary btn-lg shadow md-body rounded" role="button" aria-pressed="true">Register</a>
                     </li>
                     {/* <li id="savedPosts" className="nav-item">
                         <a className="nav-link" href="#">Saved Posts</a>

@@ -53,8 +53,11 @@ body {
 .username.nav-link {
   margin-right:auto;
 }
-
-
+  /* navbar login btn */
+#loginBtn {
+  min-width: 95px;
+  min-height: 49px;
+}
 
 
 /* button behavior */
