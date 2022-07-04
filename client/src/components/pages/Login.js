@@ -2,7 +2,7 @@ import { fetchData } from "../../main.js";
 import { useState } from "react"; // hooks
 import { useNavigate } from "react-router-dom";
 
-const LoginForm = () => {
+const Login = () => {
     const navigate = useNavigate();
 
     const [user, setUser] = useState({
@@ -66,4 +66,4 @@ const LoginForm = () => {
 
     );
 }
-export default LoginForm;
+export default Login;

@@ -2,7 +2,7 @@ import { fetchData } from "../../main.js";
 import { useState } from "react"; // hooks
 import { useNavigate } from "react-router-dom";
 
-const RegisterForm = () => {
+const Register = () => {
     const navigate = useNavigate();
 
     const [user, setUser] = useState({
@@ -79,4 +79,4 @@ const RegisterForm = () => {
 
     );
 }
-export default RegisterForm;
+export default Register;

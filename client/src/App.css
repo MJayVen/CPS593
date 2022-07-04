@@ -7,12 +7,13 @@
   --navy-blue: #191d51;
   --light-blue: #e3e4fd;
 }
-html, body {
-  padding: 0 10px;
+html, body, #root, .App {
+  padding: 0 5px;
   font-family:Cambria;
   background-color: var(--off-white);
-  min-height: 100% !important;
-  height: 100%;
+  /* min-height: 100% !important; */
+  height: auto !important;
+  margin:0;
 }
 
 /* main page structure */
@@ -21,7 +22,7 @@ html, body {
   border-width: 1px !important;
   min-width: 420px;
   max-width: 1320px;
-  padding:0px;
+  padding: 0px;
   height: 100%;
   background-color: white;
 } 
@@ -87,19 +88,11 @@ html, body {
   border-color:var(--red);
 } */
 
-
-
-/* new post button */
-#newPost {
-  border: 1px solid var(--navy-blue);
-  background-color: var(--light-blue);
-  font-weight: bold;
-  border-radius: 50px;
-  height:min-content;
-  max-width: 169px;
-  min-width: 169px;
-  margin: 0 10px;
+#profile {
+  height: 100%;
 }
+
+
 
 /* log in/sign in buttons */
 #signInBtns {
@@ -136,11 +129,6 @@ html, body {
   text-align: center;
   color: var(--darker-red);
   font-weight: bold;
-}
-
-#profile {
-  height: 100%;
-  width: 100%;
 }
 
 /* banner */
@@ -180,47 +168,46 @@ html, body {
 }
 
 /* Post */
-#post {
+.post {
  width: 90%;
  border-color: var(--navy-blue) !important;
  margin: 30px 0;
 }
-#post-title {
+.post-title {
   background-color: var(--darker-red) !important;
   color: var(--off-white);
   font-size: 2rem;
 }
-#post-content {
+.post-content {
   border-bottom: 1px solid var(--navy-blue);
   font-size: 1.25rem;
 }
-#post-meta {
+.post-meta {
   display: flex;
   justify-content: right;
   align-items: center;
   padding: 0 20px;
 }
-#post-meta button {
+.post-meta button {
   margin-right: 10px;
   border: none;
 }
-#post-save:hover {
+.post-save:hover {
   background-color: var(--navy-blue);
   color: white;
 }
-#post-edit:hover {
+.post-edit:hover {
   background-color: green;
   color: white;
 }
-#post-delete:hover {
+.post-delete:hover {
   background-color: var(--dark-red);
   color: white;
 }
-#post-info {
+.post-info {
   margin-right: auto !important;
   font-weight: bold;
 }
-
 
 #show-posts{
   display: flex;
@@ -228,3 +215,19 @@ html, body {
   align-items: center;
 }
 
+#new-post {
+  width: 90%;
+  border-color: var(--navy-blue) !important;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+
+}
+#new-post-btn {
+  border: 1px solid var(--navy-blue);
+  background-color: var(--light-blue);
+  font-weight: bold;
+  border-radius: 50px;
+  width: 10rem;
+  align-self: end;
+}

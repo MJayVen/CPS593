@@ -16,7 +16,7 @@ const Profile = () => {
                     {/* <button type="submit" id="follow-btn" className="btn btn-primary shadow md-body rounded">Follow</button> */}
                 </div>
             </div>
-            <ShowPosts userId={ _id }/>
+            <ShowPosts userId={ _id } />
         </div>
     )
 }
