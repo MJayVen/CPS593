@@ -1,4 +1,5 @@
 // imports
+const { ObjectID } = require("bson");
 const express = require("express");
 const Post = require('../models/post');
 
@@ -8,25 +9,25 @@ const router = express.Router();
 router
     .post('/create', async (req, res) => {
         try {
-            const post = await Post.createPost(req.body.userId, req.body.content);
+            const post = await Post.createPost(req.body.userId, req.body.title, req.body.content);
             res.send(post);
         } catch(error) {
             res.status(401).send({ message:error.message });
         }
     })
 
-    .get('/getOne', async (req, res) => {
+    .get('/getOne/:postId', async (req, res) => {
         try {
-            const post = await Post.getOnePost(req.body.postId);
+            const post = await Post.getOnePost(req.params.postId);
             res.send(post);
         } catch(error) {
             res.status(401).send({ message:error.message });
         }
     })
 
-    .get('/getAll', async (req, res) => {
+    .get('/getAll/:userId', async (req, res) => {
         try {
-            const posts = await Post.getAllPosts(req.body.userId);
+            const posts = await Post.getAllPosts(req.params.userId);
             res.send(posts);
         } catch(error) {
             res.status(401).send({ message:error.message });

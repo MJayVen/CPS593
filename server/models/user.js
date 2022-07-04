@@ -21,7 +21,8 @@ async function register(username, password) {
     const user = await getUser(username);
     if (user) throw Error('Username already used');
 
-    const hashed = hashPassword(password);
+    const salt = await bcrypt.genSalt(10);
+    const hashed = await bcrypt.hash(password, salt);
     
     const newUser = await User.create({
         username: username,
@@ -55,12 +56,6 @@ async function deleteUser(id) {
 // utility functions
 async function getUser(username) { 
     return await User.findOne({ "username" : username});
-}
-
-async function hashPassword(password) {
-    const salt = await bcrypt.genSalt(10);
-    const hashed = await bcrypt.hash(password,salt);
-    return hashed;
 }
 
 // export all functions necessary for route file

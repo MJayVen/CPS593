@@ -7,11 +7,12 @@
   --navy-blue: #191d51;
   --light-blue: #e3e4fd;
 }
-
-body {
+html, body {
   padding: 0 10px;
   font-family:Cambria;
   background-color: var(--off-white);
+  min-height: 100% !important;
+  height: 100%;
 }
 
 /* main page structure */
@@ -21,7 +22,7 @@ body {
   min-width: 420px;
   max-width: 1320px;
   padding:0px;
-  height: 100em;
+  height: 100%;
   background-color: white;
 } 
 
@@ -69,7 +70,7 @@ body {
 }
   /* red button */
 .btn-primary {
-  background-color: var(--dark-red) !important;
+  background-color: var(--red) !important;
   font-weight: bold;
   border:none;
 }
@@ -129,9 +130,101 @@ body {
 .signInContainer .container-sm {
   max-width: 540px;
   margin-top: 100px;
+  height: 100vh;
 }
 .signInContainer .container-sm h1{
   text-align: center;
   color: var(--darker-red);
   font-weight: bold;
 }
+
+#profile {
+  height: 100%;
+  width: 100%;
+}
+
+/* banner */
+#banner {
+  background-color: var(--red);
+  width: 100%;
+  height: 170px;
+  display: flex;
+  align-items: center;
+}
+/* #banner div {
+  margin: 50px;
+} */
+#banner-avatar {
+  border: 3px solid var(--navy-blue);
+  border-radius: 100%;
+  margin: 0 25px;
+}
+#banner-info {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  overflow: hidden;
+}
+#user-name {
+  font-weight: bold;
+  color: var(--off-white);
+  font-size: 2.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#follow-btn {
+  font-size: 1.25rem;
+  width: 100px;
+  background-color: var(--navy-blue) !important;
+}
+
+/* Post */
+#post {
+ width: 90%;
+ border-color: var(--navy-blue) !important;
+ margin: 30px 0;
+}
+#post-title {
+  background-color: var(--darker-red) !important;
+  color: var(--off-white);
+  font-size: 2rem;
+}
+#post-content {
+  border-bottom: 1px solid var(--navy-blue);
+  font-size: 1.25rem;
+}
+#post-meta {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 0 20px;
+}
+#post-meta button {
+  margin-right: 10px;
+  border: none;
+}
+#post-save:hover {
+  background-color: var(--navy-blue);
+  color: white;
+}
+#post-edit:hover {
+  background-color: green;
+  color: white;
+}
+#post-delete:hover {
+  background-color: var(--dark-red);
+  color: white;
+}
+#post-info {
+  margin-right: auto !important;
+  font-weight: bold;
+}
+
+
+#show-posts{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+

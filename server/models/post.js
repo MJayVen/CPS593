@@ -5,6 +5,7 @@ const User = mongoose.model('User');
 // Schema
 const postSchema = new mongoose.Schema({
     userId: { type: String, required: true },
+    title: { type: String, require: true },
     content: { type: String, required: true },
     likes: { type: Number, default: 0 },
     dateCreated: { type: Date, default: Date.now }
@@ -15,12 +16,13 @@ const Post = mongoose.model("Post", postSchema);
 
 // CRUD functions
 // CREATE a post
-async function createPost(userId, content) {
+async function createPost(userId, title, content) {
     userId = mongoose.Types.ObjectId(userId);
     const user = await User.findById(userId);
     if (!user) throw Error("User not found");
     const newPost = await Post.create({
         userId: userId,
+        title: title,
         content: content
     })
     return newPost;
