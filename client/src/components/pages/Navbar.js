@@ -1,9 +1,26 @@
 import { Outlet, Link } from "react-router-dom";
+import UserContext from "../../context/userContext";
+import { useContext, Fragment } from "react";
 
 function Navbar(props) {
+    const { user } = useContext(UserContext);
+
+    const authenticated = (
+        <Fragment>
+            <h2>hello, { user.username }</h2>
+        </Fragment>
+    );
+
+    const guest = (
+        <Fragment>
+            <h2>Welcome, register or login</h2> 
+        </Fragment>
+    )
+
     return (
         <div className="container border-start border-end border-bottom rounded-bottom">
             <header className="navbar navbar-expand-sm static-top border-bottom">
+                { user.authenticated ? authenticated : guest}
                 <Link className="navbar-brand" to="/Profile">
                     <img src="./images/defaultAvatar.png" alt="" width="64px" height="64px" className="rounded-circle border border-dark border-2 d-inline-block align-text-top" />
                 </Link>

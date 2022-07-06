@@ -14,8 +14,8 @@ mongoose.connect(process.env.dbURL)
 app.use(express.json()); // to parse all .json files into javascript
 
 // '__dirname' means current directory
-app.use(express.static(__dirname + "/public")); // indicates location of static files
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public', 'index.html'))); // when user enters base url in browser, brings them to default homepage 
+app.use(express.static(__dirname + "/client/build")); // indicates location of static files
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/client/build', 'index.html'))); // when user enters base url in browser, brings them to default homepage 
 
 // CORS middleware, so that front and back end can communicate from different ports
 app.use(function(req, res, next) {
