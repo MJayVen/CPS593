@@ -12,7 +12,8 @@ html, body, #root, .App {
   font-family:Cambria;
   background-color: var(--off-white);
   /* min-height: 100% !important; */
-  height: auto !important;
+  min-height: auto !important;
+  max-height: 100%;
   margin:0;
 }
 

@@ -25,7 +25,8 @@ const Register = () => {
                 .then((data) => {
                     if(!data.message) { // only get sent a message when error exists 
                         updateUser("authenticated", true);
-                        navigate("/profile", { state: data });
+                        updateUser("userId", data._id);
+                        navigate("/profile");
                     }
                 })
                 .catch((error) => {

@@ -24,7 +24,8 @@ const Login = () => {
                 .then((data) => {
                     if(!data.message) {
                         updateUser("authenticated", true);
-                        navigate("/profile", { state: data });
+                        updateUser("userId", data._id);
+                        navigate("/profile");
                     }
                 })
                 .catch((error) => {
